@@ -32,6 +32,7 @@ db.once('open', function callback() {
   console.log('meanstackplur db opened');
 });
 
+
 app.get('/partials/partialPath', function(req, res) {
   res.render('partials/' + req.params.partialPath);
 })
