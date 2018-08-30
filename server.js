@@ -34,6 +34,7 @@ db.once('open', function callback() {
 
 
 app.get('/partials/partialPath', function(req, res) {
+  console.log("dude")
   res.render('partials/' + req.params.partialPath);
 })
 
