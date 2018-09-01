@@ -9,17 +9,35 @@ angular.module('app').config(function($routeProvider, $locationProvider){
 angular.module('app').controller('mainCtrl', function($scope){
   console.log("where's?")
     $scope.myVar = "hello angular";
-    $scope.products = productService.getProducts();
 
-$scope.addToCart = function(product) {
-  cartService.addToCart(product).then(function(){
-  cartService.getCart().then(function(res){
-    $scope.cart = res.data;
-  })
- })
-}
+    function cart($scope) {
+        $scope.invoice = {
+            items: [{
+                qty: 10,
+                description: 'item',
+                cost: 9.95}]
+        };
 
-cartService.getCart().then(function(res){
-  $scope.cart = res.data;
-})
+        $scope.addItem = function() {
+            $scope.invoice.items.push({
+                qty: 1,
+                description: '',
+                cost: 0
+            });
+        },
+
+        $scope.removeItem = function(index) {
+            $scope.invoice.items.splice(index, 1);
+        },
+
+        $scope.total = function() {
+            var total = 0;
+            angular.forEach($scope.invoice.items, function(item) {
+                total += item.qty * item.cost;
+            })
+
+            return total;
+        }
+    }
+    cart();
 });
