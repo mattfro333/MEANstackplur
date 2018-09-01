@@ -5,25 +5,26 @@ block main-content
     div(ng-view)
     h1 This is a Partial
     h2 {{ myVar }}
-    h2 Shopping Card Example
-    
-        table class="table"
-            tr
-                
-                th Description
-                th Qty
-                th Cost
-                th Total
-                th
-            
-            tr (ng:repeat="item in invoice.items")
-                td(input type="text" ng:model="item.description")           
-                td(input type="number" ng:model="item.qty")
-                td(input type="number" ng:model="item.cost")
-                td {{item.qty * item.cost | currency}}
-                td
-                    a (href ng:click="removeItem($index)")X
-                
+    h2= mongoMessage
+    //- h2 Shopping Card Example
+    //- 
+    //-     table class="table"
+    //-         tr
+    //- 
+    //-             th Description
+    //-             th Qty
+    //-             th Cost
+    //-             th Total
+    //-             th
+    //- 
+    //-         tr (ng:repeat="item in invoice.items")
+    //-             td(input type="text" ng:model="item.description")           
+    //-             td(input type="number" ng:model="item.qty")
+    //-             td(input type="number" ng:model="item.cost")
+    //-             td {{item.qty * item.cost | currency}}
+    //-             td
+    //-                 a (href ng:click="removeItem($index)")X
+    //- 
       
     //-             <td><a href ng:click="addItem()" class="btn btn-small">add item</a></td>
     //-             <td></td>
