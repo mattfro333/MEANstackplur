@@ -34,10 +34,12 @@ db.once('open', function callback() {
 
 var messageSchema = mongoose.Schema({message: String});
 var Message = mongoose.model('Message', messageSchema);
-Message.findOne().exec(function(err, messageDoc){
+var mongoMessage= new Message({message: 'Hello mongoDB here'});
+mongoMessage.save(function(err, doc) {
+  Message.findOne().exec(function(err, messageDoc){
   mongoMessage = messageDoc.message;
 });
-
+});
 app.get('/partials/partialPath', function(req, res) {
   console.log("dude")
   res.render('partials/' + req.params.partialPath);
