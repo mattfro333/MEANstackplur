@@ -6,30 +6,28 @@ block main-content
     h1 This is a Partial
     h2 {{ myVar }}
     h2= mongoMessage
-    //- h2 Shopping Card Example
-    //- 
-    //-     table class="table"
-    //-         tr
-    //- 
-    //-             th Description
-    //-             th Qty
-    //-             th Cost
-    //-             th Total
-    //-             th
-    //- 
-    //-         tr (ng:repeat="item in invoice.items")
-    //-             td(input type="text" ng:model="item.description")           
-    //-             td(input type="number" ng:model="item.qty")
-    //-             td(input type="number" ng:model="item.cost")
-    //-             td {{item.qty * item.cost | currency}}
-    //-             td
-    //-                 a (href ng:click="removeItem($index)")X
-    //- 
-      
-    //-             <td><a href ng:click="addItem()" class="btn btn-small">add item</a></td>
-    //-             <td></td>
-    //-             <td>Total:</td>
-    //-             <td>{{total() | currency}}</td>
-    //-         </tr>
-    //-     </table>
-    //- </div>
+    h2 Shopping Card Example
+    
+        table (class="table")
+            tr
+        
+                div Description
+                div Qty
+                div Cost
+                div Total
+                  h2 Total:
+                  h3 {{total() | currency}}
+             //- div(ng:repeat="item in invoice.items")
+             //-    div(input type="text" ng:model="item.description")           
+             //-    div(input type="number" ng:model="item.qty")
+             //-    div(input type="number" ng:model="item.cost")
+             //-    h3 {{item.qty * item.cost | currency}}
+             //- 
+             //-        a (href ng:click="removeItem($index)")X
+        
+        
+                 //- a (href ng:click="addItem()" class="btn btn-small">add item)
+        
+                
+            
+    
