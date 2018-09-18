@@ -8,8 +8,8 @@ block main-content
     h2= mongoMessage
     h2 Shopping Card Example
     
-        table (class="table")
-            tr
+        
+            
         
                 div Description
                 div Qty
@@ -17,16 +17,16 @@ block main-content
                 div Total
                   h2 Total:
                   h3 {{total() | currency}}
-             //- div(ng:repeat="item in invoice.items")
-             //-    div(input type="text" ng:model="item.description")           
-             //-    div(input type="number" ng:model="item.qty")
-             //-    div(input type="number" ng:model="item.cost")
-             //-    h3 {{item.qty * item.cost | currency}}
-             //- 
-             //-        a (href ng:click="removeItem($index)")X
+             div(ng:repeat="item in items")
+                input(type="text" ng:model="item.description")           
+                input(type="number" ng:model="item.qty")
+                input(type="number" ng:model="item.cost")
+                h3 {{item.qty * item.cost | currency}}
+             
+                    button(ng:click="removeItem($index)") X
         
         
-                 //- a (href ng:click="addItem()" class="btn btn-small">add item)
+                 button(ng:click="addItem()" class="btn btn-small">add item)
         
                 
             
