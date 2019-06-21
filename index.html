@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="app">
+  <head>
+    <base href="/">
+
+
+      <link rel="stylesheet" type="text/css" href="./css/style.css">
+      <!-- <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"> -->
+      <!-- <link rel="stylesheet" href="/css/bootstrap.css"> -->
+      <!-- <link rel="stylesheet" type="text/css" href="/css/site.css"> -->
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body ng-controller="mainCtrl">
+
+    <div ng-view>
+    <h1> Smart Apps </h1>
+    <h4>{{ myVar }}</h4>
+    <h4 = mongoMessage></h4>
+    <h3> Shopping Cart Example </h3>
+    <h2> Reading Rainbow Goblins </h2>
+
+
+
+                <div> Description </div>
+                <div> Qty </div>
+                <div> Cost </div>
+                <div> Total </div>
+                  <h2> Total: </h2>
+                  <h3> {{total() | currency}}</h3>
+             <div ng:repeat="item in items"></div>
+                <input type="text" ng:model="item.description">
+                <input(type="number" ng:model="item.qty">
+                <input(type="number" ng:model="item.cost">
+                <h3> {{item.qty * item.cost | currency}}</h3>
+
+                    <button ng:click="removeItem($index)"> X</button>
+
+
+                 <button ng:click="addItem()" class="btn btn-small">add item</button>
+
+  <script type="text/javascript" src="/vendor/angular/angular.js"></script>
+  <script type="text/javascript" src="/vendor/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="/vendor/angular-resource/angular-resource.js"></script>
+  <script type="text/javascript" src="/vendor/angular-route/angular-route.js"></script>
+  <script type="text/javascript" src="/app/app.js"></script>
+  </body>
+</html>
