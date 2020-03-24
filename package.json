@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/mattfro333/MEANstackplur#readme",
   "dependencies": {
+    "acorn": "^5.7.4",
     "angular": "^1.7.9",
     "body-parser": "^1.18.3",
     "clean-css": "^4.1.11",
@@ -29,6 +30,7 @@
     "express": "^4.16.3",
     "jade": "^1.11.0",
     "lodash": "^4.17.13",
+    "minimist": "^1.2.5",
     "mongoose": "^5.7.5",
     "morgan": "^1.9.1",
     "mpath": "^0.5.2",
