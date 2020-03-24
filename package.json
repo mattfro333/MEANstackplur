@@ -35,7 +35,8 @@
     "morgan": "^1.9.1",
     "mpath": "^0.5.2",
     "pug": "^2.0.3",
-    "stylus": "^0.54.5"
+    "stylus": "^0.54.5",
+    "uglify-js": "^2.8.29"
   },
   "devDependencies": {
     "bower": "^1.8.8"
