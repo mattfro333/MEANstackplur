@@ -25,7 +25,7 @@ app.use(stylus.middleware(
 ))
 app.use(express.static(__dirname + '/public'));
 
-mongoose.connect('mongodb://localhost/meanstackplur');
+mongoose.connect('mongodb://localhost/meanstackplur', {useNewUrlParser: true,  useUnifiedTopology: true } );
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error...'));
 db.once('open', function callback() {
